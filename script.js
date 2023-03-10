@@ -12,25 +12,29 @@ for (let i = 0; i < gridHoriz * gridVert; i++) {
     tile.style.width = "11.1%";
     tile.style.paddingBottom = "11.1%";
     tile.style.float = "left";
-    if (i % 2 === 0) {
-        tile.style.backgroundColor = "black";
-    } else if (i % 2 !== 0)
-        tile.style.backgroundColor = "red";
+    tile.style.backgroundColor = getRandomHexColor()
+    // if (i % 2 === 0) {
+    //     tile.style.backgroundColor = "black";
+    // } else if (i % 2 !== 0)
+    //     tile.style.backgroundColor = "red";
     grid.appendChild(tile);
+}
+
+function getRandomHexColor() {
+    let hex = Math.floor(Math.random() * 16777215).toString(16);  //radix 16; 16777215 for 24-bit color
+    // console.log(hex);
+    output = "#" + "0".repeat(6 - hex.length) + hex;  // #xxxxxx format
+    return output;
 }
 
 /*
 
-9 tiles horiz by 7 tiles vertical
-top-left tile black
+### Random Colors
 
-![Screen Shot 2015-05-12 at 9.28.07 PM.png](https://draftin.com:443/images/29112?token=H321vjS2Gw41xPTjzAyQEaanRGjm6cAAskSoQgbnGA3El3ojEIP8BRWE8sjyUGBBkd7o1MKNRCpIzYc32qvwsyQ)
+On a new branch called `randomcolors`, implement the following changes:
 
-**Hints**
+1. Instead of being either red or black, each tile should be a random color.  How do you generate random colors?  You can use RGB or Hexadecimal as your color system.
 
-* Each tile should be a `div`
-* Each tile's width is `11.1%`
-* Set each tile's `float` property to `left`
-* Each tile's paddingBottom is `11.1%`
+![Screen Shot 2015-05-12 at 10.19.59 PM.png](https://draftin.com:443/images/29115?token=g0Da9o1sdpfxhhNjHJVQ2578h9pJatEhrE_4ysca-j-FXB3EX58CGJmXZT0087rlBo22A_MgqflTfIxhMsUfuV8) 
 
 */
