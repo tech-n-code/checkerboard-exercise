@@ -32,6 +32,18 @@ function getRandomRGBColor() {
     return [red, green, blue];
 }
 
+setTimeout(function() {
+    window.location.reload();
+}, 2000);
+
+let audio = document.createElement("audio");
+audio.controls = "true";
+audio.autoplay = "true";
+audio.muted = "true";
+audio.src = "https://freepd.com/music/Backbeat.mp3";
+grid.appendChild(audio);
+// console.log(audio);
+
 // function getRandomHexColor() {
 //     let hex = Math.floor(Math.random() * 16777215).toString(16);  //radix 16; 16777215 for 24-bit color
 //     // console.log(hex);
@@ -41,10 +53,12 @@ function getRandomRGBColor() {
 
 /*
 
-### Gradient
+### Flashing Colors
 
-On a new branch called `gradient`, write code to color the tiles using some sort of gradient.  It does not need to look exactly like the image below, but it should have some sort of increasing/decreasing color values.
+On a new branch called `flashing`, write code to change each tile's color to a new random color every 2 seconds. 
 
-![Screen Shot 2015-05-12 at 10.17.24 PM.png](https://draftin.com:443/images/29114?token=rfd8xRPfnvVY9rkIhhzxIl8b3vWWgz6_sprT3mzf2K2uvZ39L9w6pHD4JlE8BxU6vmkDCTmxzm0kw7m2gbSNhBw) 
+### Bonus: Audio
+
+Get some audio playing to accompany your trippy visuals, using only JS.  No editing the HTML!
 
 */
